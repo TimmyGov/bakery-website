@@ -398,189 +398,6 @@ img {
     color: var(--text-light);
 }
 
-/* Contact Form */
-.contact-form-section {
-    padding: 4rem 0;
-    background-color: var(--off-white);
-}
-
-.contact-form-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--bread-crust);
-}
-
-.contact-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px var(--shadow);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 2px solid var(--cream);
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--golden-brown);
-}
-
-.btn-submit {
-    background-color: var(--golden-brown);
-    color: var(--white);
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.btn-submit:hover {
-    background-color: var(--bread-crust);
-}
-
-.form-note {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-light);
-}
-
-.form-success-message {
-    background-color: #d4edda;
-    border: 2px solid #c3e6cb;
-    border-radius: 8px;
-    color: #155724;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    transition: opacity 0.3s ease;
-}
-
-.form-success-message p {
-    margin: 0.5rem 0;
-}
-
-.form-success-message strong {
-    color: #0f4320;
-}
-
-/* Location Section */
-.location-section {
-    padding: 4rem 0;
-    background-color: var(--cream);
-}
-
-.location-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--bread-crust);
-}
-
-.location-info {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px var(--shadow);
-    text-align: center;
-}
-
-.location-info p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    line-height: 1.8;
-}
-
-.map-container {
-    max-width: 900px;
-    margin: 0 auto 2rem;
-}
-
-.map-placeholder {
-    background-color: var(--white);
-    border: 2px dashed var(--wheat);
-    border-radius: 10px;
-    padding: 4rem 2rem;
-    text-align: center;
-    color: var(--text-light);
-}
-
-.map-placeholder p:first-child {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.map-note {
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-top: 1rem;
-}
-
-.directions {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px var(--shadow);
-}
-
-.directions h3 {
-    color: var(--bread-crust);
-    margin-bottom: 1rem;
-}
-
-.directions p {
-    margin-bottom: 1rem;
-    color: var(--text-light);
-}
-
-.directions ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.directions li {
-    padding: 0.5rem 0;
-    color: var(--text-light);
-}
-
 /* ============================================
    Footer
    ============================================ */
@@ -652,9 +469,7 @@ img {
     .about h2,
     .carousel-section h2,
     .page-hero h2,
-    .business-hours h2,
-    .contact-form-section h2,
-    .location-section h2 {
+    .business-hours h2 {
         font-size: 2rem;
     }
 
@@ -684,11 +499,6 @@ img {
     .hours-content {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
     }
 
     .contact-grid {
