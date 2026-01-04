@@ -82,6 +82,9 @@ class Carousel {
 
 // Initialize carousel when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Store carousel instance for potential future use
-    window.carouselInstance = new Carousel();
+    // Store carousel instance in a namespace to avoid global pollution
+    if (!window.BakeryWebsite) {
+        window.BakeryWebsite = {};
+    }
+    window.BakeryWebsite.carousel = new Carousel();
 });

@@ -29,13 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Function to show success message
 function showSuccessMessage(name) {
+    // Sanitize the name by creating text node to prevent XSS
+    const sanitizedName = document.createTextNode(name);
+    
     // Create success message element
     const successDiv = document.createElement('div');
     successDiv.className = 'form-success-message';
-    successDiv.innerHTML = `
-        <p><strong>Thank you, ${name}!</strong></p>
-        <p>We've received your message and will get back to you soon.</p>
-    `;
+    
+    // Create message structure safely
+    const thankYouPara = document.createElement('p');
+    const strong = document.createElement('strong');
+    strong.textContent = 'Thank you, ';
+    strong.appendChild(sanitizedName);
+    strong.appendChild(document.createTextNode('!'));
+    thankYouPara.appendChild(strong);
+    
+    const messagePara = document.createElement('p');
+    messagePara.textContent = "We've received your message and will get back to you soon.";
+    
+    successDiv.appendChild(thankYouPara);
+    successDiv.appendChild(messagePara);
     
     // Insert message at the beginning of the form
     const form = document.getElementById('contactForm');
