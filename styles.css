@@ -511,6 +511,22 @@ img {
     color: var(--bread-crust);
 }
 
+.location-info {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px var(--shadow);
+    text-align: center;
+}
+
+.location-info p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
 .map-container {
     max-width: 900px;
     margin: 0 auto 2rem;
