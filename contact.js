@@ -29,18 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Function to show success message
 function showSuccessMessage(name) {
-    // Sanitize the name by creating text node to prevent XSS
-    const sanitizedName = document.createTextNode(name);
-    
     // Create success message element
     const successDiv = document.createElement('div');
     successDiv.className = 'form-success-message';
     
-    // Create message structure safely
+    // Create message structure safely to prevent XSS
     const thankYouPara = document.createElement('p');
     const strong = document.createElement('strong');
-    strong.textContent = 'Thank you, ';
-    strong.appendChild(sanitizedName);
+    strong.appendChild(document.createTextNode('Thank you, '));
+    strong.appendChild(document.createTextNode(name));
     strong.appendChild(document.createTextNode('!'));
     thankYouPara.appendChild(strong);
     
