@@ -1,0 +1,682 @@
+/* ============================================
+   CSS Variables - Bakery Theme Colors
+   ============================================ */
+:root {
+    --cream: #FAF7F0;
+    --off-white: #FFF8E8;
+    --golden-brown: #D4A574;
+    --wheat: #C19A6B;
+    --bread-crust: #B08968;
+    --dark-brown: #8B7355;
+    --text-dark: #3E2723;
+    --text-light: #6D4C41;
+    --accent: #D2691E;
+    --white: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.nav-brand h1 {
+    color: var(--bread-crust);
+    font-size: 1.8rem;
+    font-family: 'Georgia', serif;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: var(--golden-brown);
+    color: var(--white);
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, var(--wheat) 0%, var(--golden-brown) 100%);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.about {
+    padding: 4rem 0;
+    background-color: var(--off-white);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--bread-crust);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    color: var(--text-light);
+}
+
+/* ============================================
+   Carousel Section
+   ============================================ */
+.carousel-section {
+    padding: 4rem 0;
+    background-color: var(--cream);
+}
+
+.carousel-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--bread-crust);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--shadow);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: var(--white);
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: var(--text-dark);
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background-color: var(--golden-brown);
+    color: var(--white);
+}
+
+.carousel-control.prev {
+    left: 20px;
+}
+
+.carousel-control.next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active,
+.indicator:hover {
+    background-color: var(--white);
+}
+
+/* ============================================
+   Contact Page Styles
+   ============================================ */
+.page-hero {
+    background: linear-gradient(135deg, var(--bread-crust) 0%, var(--wheat) 100%);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+}
+
+.contact-info {
+    padding: 4rem 0;
+    background-color: var(--off-white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 15px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px var(--shadow-hover);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    color: var(--bread-crust);
+    margin-bottom: 1rem;
+}
+
+.contact-card a {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* Business Hours */
+.business-hours {
+    padding: 4rem 0;
+    background-color: var(--cream);
+}
+
+.business-hours h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--bread-crust);
+}
+
+.hours-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.hours-table {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px var(--shadow);
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--cream);
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.day {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.time {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.hours-note {
+    background-color: var(--off-white);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--golden-brown);
+}
+
+.hours-note p {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+/* Contact Form */
+.contact-form-section {
+    padding: 4rem 0;
+    background-color: var(--off-white);
+}
+
+.contact-form-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--bread-crust);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px var(--shadow);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--cream);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--golden-brown);
+}
+
+.btn-submit {
+    background-color: var(--golden-brown);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: var(--bread-crust);
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Location Section */
+.location-section {
+    padding: 4rem 0;
+    background-color: var(--cream);
+}
+
+.location-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--bread-crust);
+}
+
+.map-container {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.map-placeholder {
+    background-color: var(--white);
+    border: 2px dashed var(--wheat);
+    border-radius: 10px;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.map-placeholder p:first-child {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.map-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.directions {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px var(--shadow);
+}
+
+.directions h3 {
+    color: var(--bread-crust);
+    margin-bottom: 1rem;
+}
+
+.directions p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.directions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.directions li {
+    padding: 0.5rem 0;
+    color: var(--text-light);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: var(--golden-brown);
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    line-height: 1.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--cream);
+}
+
+.footer-section a:hover {
+    color: var(--golden-brown);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--wheat);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .about h2,
+    .carousel-section h2,
+    .page-hero h2,
+    .business-hours h2,
+    .contact-form-section h2,
+    .location-section h2 {
+        font-size: 2rem;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-caption {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .carousel-control.prev {
+        left: 10px;
+    }
+
+    .carousel-control.next {
+        right: 10px;
+    }
+
+    .hours-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .about-content p {
+        text-align: left;
+    }
+}
