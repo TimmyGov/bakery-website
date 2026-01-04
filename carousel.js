@@ -30,11 +30,14 @@ class Carousel {
         carouselContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
         carouselContainer.addEventListener('mouseleave', () => this.startAutoPlay());
 
-        // Add keyboard navigation
-        document.addEventListener('keydown', (e) => {
+        // Add keyboard navigation (only when carousel is in focus)
+        carouselContainer.setAttribute('tabindex', '0');
+        carouselContainer.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') {
+                e.preventDefault();
                 this.previousSlide();
             } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
                 this.nextSlide();
             }
         });
@@ -79,5 +82,6 @@ class Carousel {
 
 // Initialize carousel when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = new Carousel();
+    // Store carousel instance for potential future use
+    window.carouselInstance = new Carousel();
 });
